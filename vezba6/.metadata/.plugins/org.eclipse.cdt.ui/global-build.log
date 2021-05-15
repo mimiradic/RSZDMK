@@ -1,0 +1,63 @@
+20:37:28 **** Incremental Build of configuration Release for project zadatak ****
+make all 
+Building target: zadatak.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,zadatak.map -L"C:\Users\Milorad\Desktop\RSZDMK\vezba6\usart\Release" -mmcu=atmega328p -o "zadatak.elf"  ./main.o   -lusart
+Finished building target: zadatak.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S zadatak.elf  >"zadatak.lss"
+Finished building: zadatak.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex zadatak.elf  "zadatak.hex"
+Finished building: zadatak.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328p zadatak.elf
+AVR Memory Usage
+----------------
+Device: atmega328p
+
+Program:     780 bytes (2.4% Full)
+(.text + .data + .bootloader)
+
+Data:        123 bytes (6.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+E:\eclipse\eclipse\bin\avrdude -pm328p -carduino -PCOM3 -Uflash:w:zadatak.hex:a
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e950f
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "zadatak.hex"
+avrdude: input file zadatak.hex auto detected as Intel Hex
+avrdude: writing flash (780 bytes):
+
+Writing | ################################################## | 100% 0.13s
+
+avrdude: 780 bytes of flash written
+avrdude: verifying flash memory against zadatak.hex:
+avrdude: load data flash data from input file zadatak.hex:
+avrdude: input file zadatak.hex auto detected as Intel Hex
+avrdude: input file zadatak.hex contains 780 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.10s
+
+avrdude: verifying ...
+avrdude: 780 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 

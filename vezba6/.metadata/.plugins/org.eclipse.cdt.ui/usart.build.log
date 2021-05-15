@@ -1,0 +1,35 @@
+20:36:18 **** Build of configuration Release for project usart ****
+make all 
+Building file: ../usart.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"usart.d" -MT"usart.o" -c -o "usart.o" "../usart.c"
+Finished building: ../usart.c
+ 
+Building target: libusart.a
+Invoking: AVR Archiver
+avr-ar -r  "libusart.a"  ./usart.o  
+e:\eclipse\eclipse\bin\avr-ar.exe: creating libusart.a
+Finished building target: libusart.a
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S libusart.a  >"libusart.lss"
+Finished building: libusart.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328p libusart.a
+AVR Memory Usage
+----------------
+Device: atmega328p
+
+Program:       0 bytes (0.0% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:36:19 Build Finished. 0 errors, 0 warnings. (took 907ms)
+
