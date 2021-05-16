@@ -1,0 +1,92 @@
+/**
+ * @file main.c
+ * @brief aritmeticki niz
+ * @author Milorad Radic
+ * @date 16-05-2021
+ * @version 1.0
+ */
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <util/delay.h>
+#include "pin.h"
+#include "util.h"
+#include "../usart/usart.h"
+#include "../timer0/timer0.h"
+
+//Funkcija koja racuna izraz
+int32_t Izracunaj(int16_t a, int8_t operacija, int16_t b);
+
+int main()
+{
+	usartInit(9600);
+	timer0InteruptInit();
+	int16_t a;
+	int8_t operacija;
+	int16_t b;
+	int32_t c;
+
+	int8_t tmp[50];
+
+	while (1)
+	{
+		sprintf(tmp, "Unesite izraz\r\n\0");
+		usartPutString(tmp);
+
+		while (usartAvailable() == 0)
+		;
+		timer0DelayMs(100);
+
+		a = usartParseInt();
+		operacija = usartGetChar();
+		b = usartParseInt();
+
+		c = Izracunaj(a, operacija, b);
+
+		if (c != "greska")
+		{
+			sprintf(tmp, "Vrednost izraza %d%c%d je %d\r\n", a, operacija, b, c);
+			usartPutString(tmp);
+		}
+		else
+		{
+			sprintf(tmp, "Pogresno unet izraz");
+			usartPutString(tmp);
+		}
+		usartPutString("\r\n\0");
+
+	}
+
+	return 0;
+}
+
+int32_t Izracunaj(int16_t a, int8_t operacija, int16_t b)
+{
+	int32_t rezultat;
+
+	switch (operacija)
+	{
+		case '+':
+			rezultat = a + b;
+			break;
+		case '-':
+			rezultat = a - b;
+			break;
+		case '*':
+			rezultat = a * b;
+			break;
+		case '/':
+			if (b == 0)
+				rezultat = "greska";
+			else
+				rezultat = a / b;
+			break;
+		default:
+			rezultat = "greska";
+			break;
+	}
+
+	return rezultat;
+}
+
+

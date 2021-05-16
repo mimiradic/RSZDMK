@@ -1,0 +1,68 @@
+11:17:01 **** Incremental Build of configuration Release for project zadatak1 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: zadatak1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,zadatak1.map -L"C:\Users\Milorad\Desktop\RSZDMK\RSzDMK_ kolokvijum_1\Kolokvijum\usart\Release" -L"C:\Users\Milorad\Desktop\RSZDMK\RSzDMK_ kolokvijum_1\Kolokvijum\timer0\Release" -mmcu=atmega328p -o "zadatak1.elf"  ./main.o ./pin.o ./util.o   -lusart -ltimer0
+Finished building target: zadatak1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S zadatak1.elf  >"zadatak1.lss"
+Finished building: zadatak1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex zadatak1.elf  "zadatak1.hex"
+Finished building: zadatak1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328p zadatak1.elf
+AVR Memory Usage
+----------------
+Device: atmega328p
+
+Program:     470 bytes (1.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+E:\eclipse\eclipse\bin\avrdude -pm328p -carduino -PCOM3 -Uflash:w:zadatak1.hex:a
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e950f
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "zadatak1.hex"
+avrdude: input file zadatak1.hex auto detected as Intel Hex
+avrdude: writing flash (470 bytes):
+
+Writing | ################################################## | 100% 0.08s
+
+avrdude: 470 bytes of flash written
+avrdude: verifying flash memory against zadatak1.hex:
+avrdude: load data flash data from input file zadatak1.hex:
+avrdude: input file zadatak1.hex auto detected as Intel Hex
+avrdude: input file zadatak1.hex contains 470 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.06s
+
+avrdude: verifying ...
+avrdude: 470 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 

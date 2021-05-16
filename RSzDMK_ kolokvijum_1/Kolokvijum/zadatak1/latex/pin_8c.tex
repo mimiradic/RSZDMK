@@ -1,0 +1,68 @@
+\hypertarget{pin_8c}{}\doxysection{pin.\+c File Reference}
+\label{pin_8c}\index{pin.c@{pin.c}}
+
+
+biblioteka koja definise funkcije za upravljanje pinovima  
+
+
+{\ttfamily \#include \char`\"{}pin.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pin_8c_a2a16b0b96e2105acbc86920c802fe0c6}{pin\+Set\+Value}} (unsigned char port, unsigned char pin, unsigned char value)
+\item 
+void \mbox{\hyperlink{pin_8c_a77aa088e614a56bcb99fce9ed3b844e9}{pin\+Init}} (unsigned char port, unsigned char pin, unsigned char direction)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+biblioteka koja definise funkcije za upravljanje pinovima 
+
+\begin{DoxyAuthor}{Author}
+Milorad Radic 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16-\/05-\/2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pin_8c_a77aa088e614a56bcb99fce9ed3b844e9}\label{pin_8c_a77aa088e614a56bcb99fce9ed3b844e9}} 
+\index{pin.c@{pin.c}!pinInit@{pinInit}}
+\index{pinInit@{pinInit}!pin.c@{pin.c}}
+\doxysubsubsection{\texorpdfstring{pinInit()}{pinInit()}}
+{\footnotesize\ttfamily void pin\+Init (\begin{DoxyParamCaption}\item[{unsigned char}]{port,  }\item[{unsigned char}]{pin,  }\item[{unsigned char}]{direction }\end{DoxyParamCaption})}
+
+pin\+Init -\/ Funkcija koja implementiran inicijalizaciju pina 
+\begin{DoxyParams}{Parameters}
+{\em port} & -\/ ulaz tipa unsigned char -\/ Port na kojem je pin koji je potrebno inicijalizovati \\
+\hline
+{\em pin} & -\/ ulaz tipa unsigned char -\/ Pin koji je potrebno inicijalizovati \\
+\hline
+{\em direction} & -\/ ulaz tipa unsigned char -\/ Smer prema kojem je potrebno inicijalizovati pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nema povratnu vrednost 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pin_8c_a2a16b0b96e2105acbc86920c802fe0c6}\label{pin_8c_a2a16b0b96e2105acbc86920c802fe0c6}} 
+\index{pin.c@{pin.c}!pinSetValue@{pinSetValue}}
+\index{pinSetValue@{pinSetValue}!pin.c@{pin.c}}
+\doxysubsubsection{\texorpdfstring{pinSetValue()}{pinSetValue()}}
+{\footnotesize\ttfamily void pin\+Set\+Value (\begin{DoxyParamCaption}\item[{unsigned char}]{port,  }\item[{unsigned char}]{pin,  }\item[{unsigned char}]{value }\end{DoxyParamCaption})}
+
+pin\+Set\+Value -\/ Funkcija koja postavlja vrednost na pinu 
+\begin{DoxyParams}{Parameters}
+{\em port} & -\/ ulaz tipa unsigned char -\/ Port na kojem je pin ciju vrednost potrebno postaviti \\
+\hline
+{\em pin} & -\/ ulaz tipa unsigned char -\/ Pin ciju je vrednost potrebno postaviti \\
+\hline
+{\em value} & -\/ ulaz tipa unsigned char -\/ Vrednost koju je potrebno postaviti na pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nema povratnu vrednost 
+\end{DoxyReturn}

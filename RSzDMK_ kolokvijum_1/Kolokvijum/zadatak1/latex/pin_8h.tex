@@ -1,0 +1,92 @@
+\hypertarget{pin_8h}{}\doxysection{pin.\+h File Reference}
+\label{pin_8h}\index{pin.h@{pin.h}}
+
+
+biblioteka koja deklarise funkcije za upravljanje pinovima  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{pin_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}\label{pin_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}} 
+\#define \mbox{\hyperlink{pin_8h_a5bb885982ff66a2e0a0a45a8ee9c35e2}{H\+I\+GH}}~1
+\begin{DoxyCompactList}\small\item\em Makro za podesavanje visoke vrednosti signala na pinu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pin_8h_ab811d8c6ff3a505312d3276590444289}\label{pin_8h_ab811d8c6ff3a505312d3276590444289}} 
+\#define \mbox{\hyperlink{pin_8h_ab811d8c6ff3a505312d3276590444289}{L\+OW}}~0
+\begin{DoxyCompactList}\small\item\em Makro za podesavanje niske vrednosti signala na pinu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pin_8h_a61a3c9a18380aafb6e430e79bf596557}\label{pin_8h_a61a3c9a18380aafb6e430e79bf596557}} 
+\#define \mbox{\hyperlink{pin_8h_a61a3c9a18380aafb6e430e79bf596557}{O\+U\+T\+P\+UT}}~1
+\begin{DoxyCompactList}\small\item\em Makro za podesavanje izlaznog smera pina. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pin_8h_a1bb283bd7893b9855e2f23013891fc82}\label{pin_8h_a1bb283bd7893b9855e2f23013891fc82}} 
+\#define \mbox{\hyperlink{pin_8h_a1bb283bd7893b9855e2f23013891fc82}{I\+N\+P\+UT}}~0
+\begin{DoxyCompactList}\small\item\em Makro za podesavanje ulaznog smera pina. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pin_8h_ab67535e80c86be4dabdcae0f6028511d}\label{pin_8h_ab67535e80c86be4dabdcae0f6028511d}} 
+\#define \mbox{\hyperlink{pin_8h_ab67535e80c86be4dabdcae0f6028511d}{P\+O\+R\+T\+\_\+B}}~0
+\begin{DoxyCompactList}\small\item\em Makro za selektovanje porta B. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pin_8h_a8b1f19a91c7a14a40f9633985d330e40}\label{pin_8h_a8b1f19a91c7a14a40f9633985d330e40}} 
+\#define \mbox{\hyperlink{pin_8h_a8b1f19a91c7a14a40f9633985d330e40}{P\+O\+R\+T\+\_\+C}}~1
+\begin{DoxyCompactList}\small\item\em Makro za selektovanje porta C. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{pin_8h_ae256d5f69ef8fdfab967632ad7b753df}\label{pin_8h_ae256d5f69ef8fdfab967632ad7b753df}} 
+\#define \mbox{\hyperlink{pin_8h_ae256d5f69ef8fdfab967632ad7b753df}{P\+O\+R\+T\+\_\+D}}~2
+\begin{DoxyCompactList}\small\item\em Makro za selektovanje porta D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pin_8h_a2a16b0b96e2105acbc86920c802fe0c6}{pin\+Set\+Value}} (unsigned char port, unsigned char pin, unsigned char value)
+\item 
+void \mbox{\hyperlink{pin_8h_a77aa088e614a56bcb99fce9ed3b844e9}{pin\+Init}} (unsigned char port, unsigned char pin, unsigned char direction)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+biblioteka koja deklarise funkcije za upravljanje pinovima 
+
+\begin{DoxyAuthor}{Author}
+Milorad Radic 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16-\/05-\/2021 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pin_8h_a77aa088e614a56bcb99fce9ed3b844e9}\label{pin_8h_a77aa088e614a56bcb99fce9ed3b844e9}} 
+\index{pin.h@{pin.h}!pinInit@{pinInit}}
+\index{pinInit@{pinInit}!pin.h@{pin.h}}
+\doxysubsubsection{\texorpdfstring{pinInit()}{pinInit()}}
+{\footnotesize\ttfamily void pin\+Init (\begin{DoxyParamCaption}\item[{unsigned char}]{port,  }\item[{unsigned char}]{pin,  }\item[{unsigned char}]{direction }\end{DoxyParamCaption})}
+
+pin\+Init -\/ Funkcija koja implementiran inicijalizaciju pina 
+\begin{DoxyParams}{Parameters}
+{\em port} & -\/ ulaz tipa unsigned char -\/ Port na kojem je pin koji je potrebno inicijalizovati \\
+\hline
+{\em pin} & -\/ ulaz tipa unsigned char -\/ Pin koji je potrebno inicijalizovati \\
+\hline
+{\em direction} & -\/ ulaz tipa unsigned char -\/ Smer prema kojem je potrebno inicijalizovati pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nema povratnu vrednost 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pin_8h_a2a16b0b96e2105acbc86920c802fe0c6}\label{pin_8h_a2a16b0b96e2105acbc86920c802fe0c6}} 
+\index{pin.h@{pin.h}!pinSetValue@{pinSetValue}}
+\index{pinSetValue@{pinSetValue}!pin.h@{pin.h}}
+\doxysubsubsection{\texorpdfstring{pinSetValue()}{pinSetValue()}}
+{\footnotesize\ttfamily void pin\+Set\+Value (\begin{DoxyParamCaption}\item[{unsigned char}]{port,  }\item[{unsigned char}]{pin,  }\item[{unsigned char}]{value }\end{DoxyParamCaption})}
+
+pin\+Set\+Value -\/ Funkcija koja postavlja vrednost na pinu 
+\begin{DoxyParams}{Parameters}
+{\em port} & -\/ ulaz tipa unsigned char -\/ Port na kojem je pin ciju vrednost potrebno postaviti \\
+\hline
+{\em pin} & -\/ ulaz tipa unsigned char -\/ Pin ciju je vrednost potrebno postaviti \\
+\hline
+{\em value} & -\/ ulaz tipa unsigned char -\/ Vrednost koju je potrebno postaviti na pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nema povratnu vrednost 
+\end{DoxyReturn}
